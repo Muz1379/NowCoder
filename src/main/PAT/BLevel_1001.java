@@ -5,7 +5,7 @@ import java.util.Scanner;
  * @date: 2018.2.4
  * @decription: 题目链接：https://www.nowcoder.net/pat/6/problem/4077
  */
-public class PAT_001
+public class BLevel_1001
     {
         public static void main(String[] args)
             {
