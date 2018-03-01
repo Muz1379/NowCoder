@@ -16,6 +16,31 @@ public class RectangleCover
                 {
                     return RectCover(target - 1) + RectCover(target - 2);
                 }
-                
+        
+            }
+    
+        /**
+         * 迭代求矩形覆盖
+         *
+         * @param target
+         *
+         * @return
+         */
+        public int RectCoverIteration(int target)
+            {
+                if (target < 3)
+                {
+                    return target;
+                }
+                int A = 1;
+                int B = 2;
+                int result = 0;
+                for (int i = 2; i < target; i++)
+                {
+                    result = A + B;
+                    A = B;
+                    B = result;
+                }
+                return result;
             }
     }
