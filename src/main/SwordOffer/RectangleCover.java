@@ -35,7 +35,7 @@ public class RectangleCover
                 int A = 1;
                 int B = 2;
                 int result = 0;
-                for (int i = 2; i < target; i++)
+                while (target-- > 2)
                 {
                     result = A + B;
                     A = B;
