@@ -18,4 +18,19 @@ public class OneInBinary
                 }
                 return res;
             }
+    
+        public int NumberOfOneInBin(int n)
+            {
+                int flag = 1;
+                int res = 0;
+                while (flag != 0)
+                {
+                    if ((n & flag) != 0)
+                    {
+                        res++;
+                    }
+                    flag = flag << 1;
+                }
+                return res;
+            }
     }
