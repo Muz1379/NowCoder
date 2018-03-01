@@ -13,14 +13,23 @@ public class MinNubmer
                 {
                     return 0;
                 }
-                int flag = array[0];
-                for (int i : array)
+                return search(array, 0, array.length - 1);
+            }
+    
+        public static int search(int[] array, int start, int end)
+            {
+                int mid = (start + end) / 2;
+                if ((end - mid) == 1)
                 {
-                    if (flag > i)
-                    {
-                        return i;
-                    }
+                    return array[end] < array[mid] ? array[end] : array[mid];
                 }
-                return flag;
+                if (array[start] >= array[mid])
+                {
+                    return search(array, start, mid);
+                }
+                else
+                {
+                    return search(array, mid, end);
+                }
             }
     }
