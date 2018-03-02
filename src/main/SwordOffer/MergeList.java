@@ -7,51 +7,24 @@ public class MergeList
     {
         public ListNode Merge(ListNode list1, ListNode list2)
             {
-                ListNode result = null;
-                boolean flag = true;
-                
-                ListNode resultPointer = result;
-                ListNode temp;
-                
-                while ((list1 != null) || (list2 != null))
+                if (list1 == null)
                 {
-                    if (list1 != null && list2 != null)
-                    {
-                        
-                        
-                        if (list1.val <= list2.val)
-                        {
-                            temp = list1;
-                            list1 = list1.next;
-                        }
-                        else
-                        {
-                            temp = list2;
-                            list2 = list2.next;
-                        }
-                    }
-                    else if (list1 == null && list2 != null)
-                    {
-                        temp = list2;
-                        list2 = list2.next;
-                    }
-                    else
-                    {
-                        temp = list1;
-                        list1 = list1.next;
-                    }
-                    if (flag)
-                    {
-                        result = temp;
-                        resultPointer = result;
-                        flag = false;
-                    }
-                    else
-                    {
-                        resultPointer.next = temp;
-                        resultPointer = resultPointer.next;
-                    }
+                    return list2;
                 }
-                return result;
+                if (list2 == null)
+                {
+                    return list1;
+                }
+                if (list1.val <= list2.val)
+                {
+                    list1.next = Merge(list1.next, list2);
+                    return list1;
+                }
+                else
+                {
+                    list2.next = Merge(list1, list2.next);
+                    return list2;
+                }
+    
             }
     }
